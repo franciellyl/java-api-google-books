@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class BooksController {
-
     @Autowired
     BooksServiceImpl booksService;
 
     @GetMapping(value = "/volume")
     public void getVolume(BooksRequest booksRequest){
-
+        booksService.processor(booksRequest);
     }
 
     @GetMapping(value = "/healthcheck")
